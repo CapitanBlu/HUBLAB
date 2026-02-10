@@ -2,205 +2,57 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HubLab - Dashboard</title>
+    <title>HubLab - Login</title>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-cyan: #00d2d3; /* Color manual [cite: 339] */
-            --primary-blue: #0066ff; /* Color manual [cite: 340] */
-            --bg-light: #f4f7f6;
-            --text-dark: #333;
-            --white: #ffffff;
-        }
-
         body {
-            font-family: 'Space Grotesk', sans-serif; /* Tipografía manual [cite: 354] */
-            margin: 0;
-            display: flex;
+            font-family: 'Space Grotesk', sans-serif;
+            background: linear-gradient(135deg, #0066ff, #00d2d3);
             height: 100vh;
-            background-color: var(--bg-light);
-            color: var(--text-dark);
-        }
-
-        /* Sidebar según prototipo [cite: 208-210] */
-        .sidebar {
-            width: 250px;
-            background-color: var(--white);
-            border-right: 1px solid #ddd;
             display: flex;
-            flex-direction: column;
-            padding: 20px;
-        }
-
-        .logo {
-            font-weight: 700;
-            font-size: 24px;
-            color: var(--primary-blue);
-            margin-bottom: 40px;
-        }
-
-        .nav-menu {
-            list-style: none;
-            padding: 0;
-        }
-
-        .nav-item {
-            padding: 12px 15px;
-            margin-bottom: 10px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: 0.3s;
-            font-weight: 400;
-        }
-
-        .nav-item:hover, .nav-item.active {
-            background-color: var(--primary-cyan);
-            color: white;
-        }
-
-        /* Contenido Principal */
-        .main-content {
-            flex-grow: 1;
-            padding: 30px;
-            overflow-y: auto;
-        }
-
-        /* Perfil de Usuario [cite: 211-214] */
-        .welcome-card {
-            background: linear-gradient(135deg, var(--primary-blue), var(--primary-cyan));
-            color: white;
-            padding: 25px;
-            border-radius: 15px;
-            display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
-            margin-bottom: 30px;
+            margin: 0;
         }
-
-        .user-info h2 { margin: 0; font-size: 28px; }
-        .user-info p { margin: 5px 0; opacity: 0.9; }
-
-        /* Estadísticas [cite: 217-222] */
-        .stats-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-
-        .stat-card {
+        .login-card {
             background: white;
-            padding: 20px;
-            border-radius: 12px;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            width: 350px;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
         }
-
-        .stat-card h3 { font-size: 14px; color: #666; margin-bottom: 10px; }
-        .stat-card .value { font-size: 32px; font-weight: 700; color: var(--primary-blue); }
-
-        /* Tarjetas de Proyectos [cite: 227-232] */
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
+        .logo { color: #0066ff; font-size: 32px; font-weight: 700; margin-bottom: 10px; }
+        p { color: #666; font-size: 14px; margin-bottom: 30px; }
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
         }
-
-        .project-card {
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            border-top: 5px solid var(--primary-cyan);
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #0066ff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
         }
-
-        .project-card h4 { margin: 0 0 10px 0; font-size: 18px; }
-        .project-card p { font-size: 14px; color: #555; margin: 5px 0; }
-
-        .progress-container {
-            background: #eee;
-            border-radius: 10px;
-            height: 10px;
-            margin: 15px 0 5px 0;
-        }
-
-        .progress-bar {
-            height: 100%;
-            border-radius: 10px;
-            background-color: var(--primary-blue);
-        }
+        button:hover { background: #00d2d3; }
     </style>
 </head>
 <body>
-
-    <aside class="sidebar">
+    <div class="login-card">
         <div class="logo">HubLab</div>
-        <ul class="nav-menu">
-            <li class="nav-item active">Inicio</li>
-            <li class="nav-item">Mis proyectos</li>
-            <li class="nav-item">Registro de horas</li>
-            <li class="nav-item">Mi perfil</li>
-        </ul>
-    </aside>
-
-    <main class="main-content">
-        <section class="welcome-card">
-            <div class="user-info">
-                <h2>¡Bienvenida, Sophia!</h2>
-                <p><strong>Sophia Carrasco</strong> - Ingeniería Civil Informática</p>
-                <p>U. Católica de Valparaíso | Práctica: 02-01-2026 al 04-03-2026</p>
-            </div>
-        </section>
-
-        <section class="stats-container">
-            <div class="stat-card">
-                <h3>Horas Trabajadas</h3>
-                <div class="value">54</div>
-            </div>
-            <div class="stat-card">
-                <h3>Días Activos</h3>
-                <div class="value">13</div>
-            </div>
-            <div class="stat-card">
-                <h3>Proyectos Activos</h3>
-                <div class="value">2</div>
-            </div>
-        </section>
-
-        <h3>Proyectos en Curso</h3>
-        <section class="projects-grid">
-            <div class="project-card">
-                <h4>Simulador de tractor</h4>
-                <p>Rol: Desarrollador</p>
-                <p>Inicio: 03-01-2026</p>
-                <div class="progress-container">
-                    <div class="progress-bar" style="width: 80%;"></div>
-                </div>
-                <p style="text-align: right; font-size: 12px;">80% Completado</p>
-            </div>
-
-            <div class="project-card">
-                <h4>Rediseño Página</h4>
-                <p>Rol: Desarrollador</p>
-                <p>Inicio: 07-01-2026</p>
-                <div class="progress-container">
-                    <div class="progress-bar" style="width: 20%;"></div>
-                </div>
-                <p style="text-align: right; font-size: 12px;">20% Completado</p>
-            </div>
-
-            <div class="project-card">
-                <h4>Extintor VR</h4>
-                <p>Rol: Desarrollador</p>
-                <p>Inicio: 28-07-2025</p>
-                <div class="progress-container">
-                    <div class="progress-bar" style="width: 100%;"></div>
-                </div>
-                <p style="text-align: right; font-size: 12px;">100% Completado</p>
-            </div>
-        </section>
-    </main>
-
+        <h3>Practicantes</h3>
+        <p>Ingresa tu RUT y contraseña para acceder</p>
+        <input type="text" placeholder="RUT: 12.345.678-9">
+        <input type="password" placeholder="Contraseña">
+        <button onclick="location.href='dashboard.html'">Ingresar</button>
+    </div>
 </body>
 </html>
