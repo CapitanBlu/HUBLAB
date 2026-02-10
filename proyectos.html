@@ -1,0 +1,52 @@
+<style>
+    /* Estilos específicos para la grilla de proyectos */
+    .status-tag {
+        padding: 4px 10px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 700;
+    }
+    .status-active { background: #e1f5fe; color: #01579b; }
+    .status-finished { background: #e8f5e9; color: #2e7d32; }
+    .btn-join {
+        background: #00d2d3;
+        color: white;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+</style>
+
+<div class="main-content">
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h2>Proyectos Disponibles</h2>
+        <button class="btn-join" style="background: #0066ff;">+ Crear Proyecto</button>
+    </div>
+    
+    <div class="projects-grid">
+        <div class="project-card">
+            <span class="status-tag status-active">Activo</span>
+            <h4>BEMATE - Página remates</h4>
+            <p>Rol: Desarrollador | Inicio: 04-01-2026</p>
+            <div class="progress-container"><div class="progress-bar" style="width: 80%;"></div></div>
+            <button class="btn-join">Unirse</button>
+        </div>
+
+        <div class="project-card">
+            <span class="status-tag status-active">Activo</span>
+            <h4>Análisis de Mercado</h4>
+            <p>Rol: Investigador | Inicio: 05-01-2026</p>
+            <div class="progress-container"><div class="progress-bar" style="width: 60%;"></div></div>
+            <button class="btn-join">Unirse</button>
+        </div>
+
+        <div class="project-card">
+            <span class="status-tag status-finished">Terminado</span>
+            <h4>Artic</h4>
+            <p>Estado: Finalizado con éxito</p>
+            <div class="progress-container"><div class="progress-bar" style="width: 100%;"></div></div>
+        </div>
+    </div>
+</div>
